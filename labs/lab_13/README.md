@@ -4,4 +4,4 @@
 
     \protocol.txt
     \m.c - код программы
-    \report.pdf - отчет о работе
+    \report.pdf - отчет о работе 
