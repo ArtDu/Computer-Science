@@ -6,3 +6,4 @@
 4. [/lab_8](https://github.com/ArtDu/mai_study_first_course/tree/master/labs/lab_8) - C compilation
 5. [/lab_9](https://github.com/ArtDu/mai_study_first_course/tree/master/labs/lab_9) - C simple program
 6. [/lab_10](https://github.com/ArtDu/mai_study_first_course/tree/master/labs/lab_10) - C GDB
+7. [/lab_11](https://github.com/ArtDu/mai_study_first_course/tree/master/labs/lab_11) - C work with files
