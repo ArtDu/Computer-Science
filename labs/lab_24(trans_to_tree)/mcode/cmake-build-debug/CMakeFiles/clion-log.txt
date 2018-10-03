@@ -1,0 +1,4 @@
+/home/artdub/jetbrains/clion-2018.1.2/bin/cmake/bin/cmake -DCMAKE_BUILD_TYPE=Debug -G "CodeBlocks - Unix Makefiles" /home/artdub/c++/labs/sem_2/lab_24/mcode
+-- Configuring done
+-- Generating done
+-- Build files have been written to: /home/artdub/c++/labs/sem_2/lab_24/mcode/cmake-build-debug

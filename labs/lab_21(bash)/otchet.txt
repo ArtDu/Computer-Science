@@ -1,0 +1,257 @@
+artdub@mint ~/c++/labs/sem_2/lab_21/test $ date
+Чт. марта 22 12:18:15 MSK 2018
+artdub@mint ~/c++/labs/sem_2/lab_21/test $ ls
+f1.txt  lab_21.sh
+artdub@mint ~/c++/labs/sem_2/lab_21/test $ cat lab_21.sh 
+#! /bin/bash
+
+ord() {
+  LC_CTYPE=C printf '%d' "'$1"
+}
+
+chr() {
+  [ "$1" -lt 256 ] || return 1
+  printf "\\$(printf '%03o' "$1")"
+}
+
+count=1
+start_symbol=a
+for_type_2=1
+type_of_ss=2 #1 is numeral/ 2 is letter
+tracing=0
+
+
+if [ -z "$1" ]
+	then
+	printf "$0: illegal option $1\nusage: $0 [-a INTEGER ] [-c CHAR] [-t]... FILE... \nuse -? option for help\n"
+	exit 1
+else 
+while [ -n "$1" ] #while all arguments will not be read
+do
+	case "$1" in
+		-a|--amount) #check count of copies
+			shift
+			if [ -n "$1" ]
+			then
+				if (echo "$1" | grep -E -q "^?[0-9]+$"); then
+				    count=$1
+					shift
+				else
+					printf "$0: illegal option or file doesn't exist: $1\nusage: $0 [-a INTEGER ] [-c CHAR] [-t]... FILE... \nuse -? option for help\n"
+					exit 1 
+				fi
+			else
+				printf "$0: illegal option or file doesn't exist: $1\nusage: $0 [-a INTEGER ] [-c CHAR] [-t]... FILE... \nuse -? option for help\n"
+				exit 1 
+			fi
+		;;
+		-t|--tracing) #check tracing
+			shift
+			tracing=1
+		;;
+		-c|--char) #check start letter
+			shift
+			if [ -n "$1" ]
+			then
+				if (echo "$1" | grep -E -q "^?[0-9]+$"); then
+				    start_symbol=$1
+				    type_of_ss=1
+				elif (echo "$1" | grep -E -q "^?[a-z]+$"); then
+			    	start_symbol=$1
+			    	fst=$(ord "$1")
+			    	snd=$(ord "a")
+			    	let for_type_2=fst-snd+1
+			    	type_of_ss=2
+				else 
+					printf "$0: illegal option or file doesn't exist: $1\nusage: $0 [-a INTEGER ] [-c CHAR] [-t]... FILE... \nuse -? option for help\n"
+					exit 1 
+				fi
+				shift
+			else
+				printf "$0: illegal option or file doesn't exist: $1\nusage: $0 [-a INTEGER ] [-c CHAR] [-t]... FILE... \nuse -? option for help\n"
+				exit 1 
+			fi
+		;;
+		-?|--help) #check help bar
+			shift
+			printf "NAME
+\t  $0 -- Generate copies of file.
+
+SYNOPSIS
+\t  $0 [-a INTEGER ] [-c CHAR]... FILE... 
+\t  $0 [-?]
+
+DESCRIPTION
+\t  Copies file as much as indicated in parametr -a default is 1, each copy of file will have same name with postfix letter or number.
+\t  -a [INTEGER] , --amount [INTEGER]\tselect number of copies. Default is 1. 
+\t  -c [CHAR],     --char [CHAR]\tselect start symbol from letter of the English alphabet or numeral.
+\t  -t ,--tracing \tenable tracing.
+\t  -?, --help\t show help (this menu) and exits\n" 
+		exit 1
+		;;
+
+		*) 
+			if [ ! -f "$1" ]
+			then
+			    printf "$0: illegal option or file doesn't exist: $1\nusage: $0 [-a INTEGER ] [-c CHAR] [-t]... FILE... \nuse -? option for help\n"
+				exit 1 
+		    else
+		    	file=$1
+		    	break	
+		    fi
+		;;
+	esac
+	
+
+done #end of reading arguments
+fi
+
+#programm
+
+if [[ -z $file ]]; then
+	printf "$0: illegal option or file doesn't exist: $1\nusage: $0 [-a INTEGER ] [-c CHAR] [-t]... FILE... \nuse -? option for help\n"
+	exit 1
+fi
+
+letter=$start_symbol
+
+for (( i=0; i < count; i++ ))
+do
+	
+
+	length_file_name=${#file}
+	pos_of_point_by_the_end=`expr index $(echo "$file"|rev) .`
+	beg_file_name=${file:0:((length_file_name-pos_of_point_by_the_end))}
+	end_file_name=${file:((length_file_name-pos_of_point_by_the_end))}
+	final_file_name=$beg_file_name"_"$letter$end_file_name #add postfix symbol
+	if [ $tracing -eq 1 ] 
+		then
+			set -x
+	fi
+	cp $file $final_file_name
+
+
+	if [ $type_of_ss = 2 ]; then 
+
+		tmp_int=$for_type_2
+		tmp_tmp=1
+		tmp_letter=""
+		letter=""
+		while [ $tmp_int -ne 0 ]
+		do
+			let rem=tmp_int%27
+			let tmp_int=tmp_int/27
+	
+			fst=$(ord "a")
+			if [[ rem -eq 0 ]]; then
+				let for_type_2=for_type_2+1
+				rem=1
+			fi
+			let tmp_letter=rem+fst-1
+		
+	    	
+	    	# echo "\t this is $letter"
+			tmp_letter=$(chr $tmp_letter)
+			letter=$tmp_letter$letter
+			# printf "$tmp_letter $for_type_2 "
+			#int to char
+		done
+		# printf "$letter\n"
+		# echo $for_type_2
+		let for_type_2=for_type_2+1
+
+
+	elif [[ $type_of_ss = 1 ]]; then
+		let letter=letter+1
+	fi
+	
+done 
+echo "Copying was succesful"
+
+exit 0
+
+artdub@mint ~/c++/labs/sem_2/lab_21/test $ bash lab_21.sh
+lab_21.sh: illegal option 
+usage: lab_21.sh [-a INTEGER ] [-c CHAR] [-t]... FILE... 
+use -? option for help
+artdub@mint ~/c++/labs/sem_2/lab_21/test $ bash lab_21.sh -?
+NAME
+	  lab_21.sh -- Generate copies of file.
+
+SYNOPSIS
+	  lab_21.sh [-a INTEGER ] [-c CHAR]... FILE... 
+	  lab_21.sh [-?]
+
+DESCRIPTION
+	  Copies file as much as indicated in parametr -a default is 1, each copy of file will have same name with postfix letter or number.
+	  -a [INTEGER] , --amount [INTEGER]	select number of copies. Default is 1. 
+	  -c [CHAR],     --char [CHAR]	select start symbol from letter of the English alphabet or numeral.
+	  -t ,--tracing 	enable tracing.
+	  -?, --help	 show help (this menu) and exits
+artdub@mint ~/c++/labs/sem_2/lab_21/test $ bash lab_21.sh f1.txt 
+Copying was succesful
+artdub@mint ~/c++/labs/sem_2/lab_21/test $ ls
+f1_a.txt  f1.txt  lab_21.sh
+artdub@mint ~/c++/labs/sem_2/lab_21/test $ bash lab_21.sh -t f1.txt 
++ cp f1.txt f1_a.txt
++ '[' 2 = 2 ']'
++ tmp_int=1
++ tmp_tmp=1
++ tmp_letter=
++ letter=
++ '[' 1 -ne 0 ']'
++ let rem=tmp_int%27
++ let tmp_int=tmp_int/27
+++ ord a
+++ LC_CTYPE=C
+++ printf %d ''\''a'
++ fst=97
++ [[ rem -eq 0 ]]
++ let tmp_letter=rem+fst-1
+++ chr 97
+++ '[' 97 -lt 256 ']'
++++ printf %03o 97
+++ printf '\141'
++ tmp_letter=a
++ letter=a
++ '[' 0 -ne 0 ']'
++ let for_type_2=for_type_2+1
++ (( i++  ))
++ (( i < count ))
++ echo 'Copying was succesful'
+Copying was succesful
++ exit 0
+artdub@mint ~/c++/labs/sem_2/lab_21/test $ bash lab_21.sh -a 3 f1.txt 
+Copying was succesful
+artdub@mint ~/c++/labs/sem_2/lab_21/test $ ;s
+bash: ошибка синтаксиса около неожиданной лексемы `;'
+artdub@mint ~/c++/labs/sem_2/lab_21/test $ ls
+f1_a.txt  f1_b.txt  f1.txt  lab_21.sh
+artdub@mint ~/c++/labs/sem_2/lab_21/test $ bash lab_21.sh -c 3 f1.txt 
+Copying was succesful
+artdub@mint ~/c++/labs/sem_2/lab_21/test $ ls
+f1_3.txt  f1_a.txt  f1_b.txt  f1.txt  lab_21.sh
+artdub@mint ~/c++/labs/sem_2/lab_21/test $ bash lab_21.sh -c a -a 36 f1.txt 
+Copying was succesful
+artdub@mint ~/c++/labs/sem_2/lab_21/test $ ls
+f1_3.txt   f1_ad.txt  f1_ah.txt  f1_c.txt  f1_g.txt  f1_k.txt  f1_o.txt  f1_s.txt  f1_v.txt  f1_z.txt
+f1_aa.txt  f1_ae.txt  f1_ai.txt  f1_d.txt  f1_h.txt  f1_l.txt  f1_p.txt  f1_t.txt  f1_w.txt  lab_21.sh
+f1_ab.txt  f1_af.txt  f1_a.txt   f1_e.txt  f1_i.txt  f1_m.txt  f1_q.txt  f1.txt    f1_x.txt
+f1_ac.txt  f1_ag.txt  f1_b.txt   f1_f.txt  f1_j.txt  f1_n.txt  f1_r.txt  f1_u.txt  f1_y.txt
+artdub@mint ~/c++/labs/sem_2/lab_21/test $ bash lab_21.sh -c a -a 136 f1.txt 
+Copying was succesful
+artdub@mint ~/c++/labs/sem_2/lab_21/test $ ls
+f1_3.txt   f1_am.txt  f1_ay.txt  f1_bl.txt  f1_bx.txt  f1_ck.txt  f1_cw.txt  f1_dj.txt  f1_dv.txt  f1_h.txt  f1.txt
+f1_aa.txt  f1_an.txt  f1_az.txt  f1_bm.txt  f1_by.txt  f1_cl.txt  f1_cx.txt  f1_dk.txt  f1_dw.txt  f1_i.txt  f1_u.txt
+f1_ab.txt  f1_ao.txt  f1_ba.txt  f1_bn.txt  f1_bz.txt  f1_cm.txt  f1_cy.txt  f1_dl.txt  f1_dx.txt  f1_j.txt  f1_v.txt
+f1_ac.txt  f1_ap.txt  f1_bb.txt  f1_bo.txt  f1_ca.txt  f1_cn.txt  f1_cz.txt  f1_dm.txt  f1_dy.txt  f1_k.txt  f1_w.txt
+f1_ad.txt  f1_aq.txt  f1_bc.txt  f1_bp.txt  f1_cb.txt  f1_co.txt  f1_da.txt  f1_dn.txt  f1_dz.txt  f1_l.txt  f1_x.txt
+f1_ae.txt  f1_ar.txt  f1_bd.txt  f1_bq.txt  f1_cc.txt  f1_cp.txt  f1_db.txt  f1_do.txt  f1_ea.txt  f1_m.txt  f1_y.txt
+f1_af.txt  f1_as.txt  f1_be.txt  f1_br.txt  f1_cd.txt  f1_cq.txt  f1_dc.txt  f1_dp.txt  f1_eb.txt  f1_n.txt  f1_z.txt
+f1_ag.txt  f1_at.txt  f1_bf.txt  f1_bs.txt  f1_ce.txt  f1_cr.txt  f1_dd.txt  f1_dq.txt  f1_ec.txt  f1_o.txt  lab_21.sh
+f1_ah.txt  f1_a.txt   f1_bg.txt  f1_bt.txt  f1_cf.txt  f1_cs.txt  f1_de.txt  f1_dr.txt  f1_ed.txt  f1_p.txt
+f1_ai.txt  f1_au.txt  f1_bh.txt  f1_b.txt   f1_cg.txt  f1_ct.txt  f1_df.txt  f1_ds.txt  f1_ee.txt  f1_q.txt
+f1_aj.txt  f1_av.txt  f1_bi.txt  f1_bu.txt  f1_ch.txt  f1_c.txt   f1_dg.txt  f1_dt.txt  f1_e.txt   f1_r.txt
+f1_ak.txt  f1_aw.txt  f1_bj.txt  f1_bv.txt  f1_ci.txt  f1_cu.txt  f1_dh.txt  f1_d.txt   f1_f.txt   f1_s.txt
+f1_al.txt  f1_ax.txt  f1_bk.txt  f1_bw.txt  f1_cj.txt  f1_cv.txt  f1_di.txt  f1_du.txt  f1_g.txt   f1_t.txt
+artdub@mint ~/c++/labs/sem_2/lab_21/test $ 

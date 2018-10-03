@@ -1,0 +1,30 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/artdub/c++/labs/sem_2/lab_26/code/lis.c
+lis.h
+/home/artdub/c++/labs/sem_2/lab_26/code/lis.h
+
+/home/artdub/c++/labs/sem_2/lab_26/code/lis.h
+stdio.h
+-
+stdlib.h
+-
+stdbool.h
+-
+
+/home/artdub/c++/labs/sem_2/lab_26/code/main.c
+stdio.h
+-
+stdlib.h
+-
+stdbool.h
+-
+lis.h
+/home/artdub/c++/labs/sem_2/lab_26/code/lis.h
+

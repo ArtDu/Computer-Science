@@ -1,0 +1,258 @@
+artdub@mint ~/c++/labs/sem_2/lab_22 $ ls
+l22-2012.djvu  l22.aux  l22.log  l22.pdf  l22.tex  othet_l22.pdf
+artdub@mint ~/c++/labs/sem_2/lab_22 $ date
+Ср. апр.  4 13:55:38 MSK 2018
+artdub@mint ~/c++/labs/sem_2/lab_22 $ ls
+l22-2012.djvu  l22.aux  l22.log  l22.pdf  l22.tex  othet_l22.pdf
+artdub@mint ~/c++/labs/sem_2/lab_22 $ pdflatex l22.tex 
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013/Debian)
+ restricted \write18 enabled.
+entering extended mode
+(./l22.tex
+LaTeX2e <2011/06/27>
+Babel <3.9h> and hyphenation patterns for 9 languages loaded.
+(/usr/share/texlive/texmf-dist/tex/latex/base/book.cls
+Document Class: book 2007/10/19 v1.4h Standard LaTeX document class
+(/usr/share/texlive/texmf-dist/tex/latex/base/bk11.clo))
+(/usr/share/texlive/texmf-dist/tex/latex/base/inputenc.sty
+(/usr/share/texlive/texmf-dist/tex/latex/base/utf8.def
+(/usr/share/texlive/texmf-dist/tex/latex/base/t1enc.dfu)
+(/usr/share/texlive/texmf-dist/tex/latex/base/ot1enc.dfu)
+(/usr/share/texlive/texmf-dist/tex/latex/base/omsenc.dfu)))
+(/usr/share/texlive/texmf-dist/tex/generic/babel/babel.sty
+(/usr/share/texlive/texmf-dist/tex/generic/babel-english/english.ldf
+(/usr/share/texlive/texmf-dist/tex/generic/babel/babel.def))
+(/usr/share/texlive/texmf-dist/tex/generic/babel-russian/russianb.ldf
+
+Package babel Warning: No Cyrillic font encoding has been loaded so far.
+(babel)                A font encoding should be declared before babel.
+(babel)                Default `T2A' encoding will be loaded  on input line 111
+.
+
+(/usr/share/texlive/texmf-dist/tex/latex/cyrillic/t2aenc.def
+(/usr/share/texlive/texmf-dist/tex/latex/base/t2aenc.dfu))))
+(/usr/share/texlive/texmf-dist/tex/latex/tools/indentfirst.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/geometry/geometry.sty
+(/usr/share/texlive/texmf-dist/tex/latex/graphics/keyval.sty)
+(/usr/share/texlive/texmf-dist/tex/generic/oberdiek/ifpdf.sty)
+(/usr/share/texlive/texmf-dist/tex/generic/oberdiek/ifvtex.sty)
+(/usr/share/texlive/texmf-dist/tex/generic/ifxetex/ifxetex.sty))
+(/usr/share/texlive/texmf-dist/tex/latex/fancyhdr/fancyhdr.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/base/textcomp.sty
+(/usr/share/texlive/texmf-dist/tex/latex/base/ts1enc.def
+(/usr/share/texlive/texmf-dist/tex/latex/base/ts1enc.dfu)))
+(/usr/share/texlive/texmf-dist/tex/latex/base/latexsym.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/amsmath/amsmath.sty
+For additional information on amsmath, use the `?' option.
+(/usr/share/texlive/texmf-dist/tex/latex/amsmath/amstext.sty
+(/usr/share/texlive/texmf-dist/tex/latex/amsmath/amsgen.sty))
+(/usr/share/texlive/texmf-dist/tex/latex/amsmath/amsbsy.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/amsmath/amsopn.sty))
+(/usr/share/texlive/texmf-dist/tex/latex/amsfonts/amsfonts.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/graphics/graphics.sty
+(/usr/share/texlive/texmf-dist/tex/latex/graphics/trig.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/latexconfig/graphics.cfg)
+(/usr/share/texlive/texmf-dist/tex/latex/pdftex-def/pdftex.def
+(/usr/share/texlive/texmf-dist/tex/generic/oberdiek/infwarerr.sty)
+(/usr/share/texlive/texmf-dist/tex/generic/oberdiek/ltxcmds.sty))) (./l22.aux
+(/usr/share/texlive/texmf-dist/tex/latex/cyrillic/t2acmr.fd))
+(/usr/share/texlive/texmf-dist/tex/latex/base/ts1cmr.fd)
+*geometry* driver: auto-detecting
+*geometry* detected driver: pdftex
+(/usr/share/texlive/texmf-dist/tex/context/base/supp-pdf.mkii
+[Loading MPS to PDF converter (version 2006.09.02).]
+) (/usr/share/texlive/texmf-dist/tex/generic/oberdiek/pdftexcmds.sty
+(/usr/share/texlive/texmf-dist/tex/generic/oberdiek/ifluatex.sty))
+(/usr/share/texlive/texmf-dist/tex/latex/oberdiek/epstopdf-base.sty
+(/usr/share/texlive/texmf-dist/tex/latex/oberdiek/grfext.sty
+(/usr/share/texlive/texmf-dist/tex/generic/oberdiek/kvdefinekeys.sty))
+(/usr/share/texlive/texmf-dist/tex/latex/oberdiek/kvoptions.sty
+(/usr/share/texlive/texmf-dist/tex/generic/oberdiek/kvsetkeys.sty
+(/usr/share/texlive/texmf-dist/tex/generic/oberdiek/etexcmds.sty)))
+(/usr/share/texlive/texmf-dist/tex/latex/latexconfig/epstopdf-sys.cfg))
+(/usr/share/texlive/texmf-dist/tex/latex/base/ulasy.fd)
+(/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsa.fd)
+(/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsb.fd) [1{/var/lib/texmf/fo
+nts/map/pdftex/updmap/pdftex.map}]
+Underfull \hbox (badness 10000) in paragraph at lines 114--115
+
+[2] (./l22.aux) )
+(see the transcript file for additional information) </home/artdub/.texmf-var/f
+onts/pk/ljfour/lh/lh-t2a/lati1095.600pk> </home/artdub/.texmf-var/fonts/pk/ljfo
+ur/lh/lh-t2a/larm1200.600pk> </home/artdub/.texmf-var/fonts/pk/ljfour/lh/lh-t2a
+/larm1095.600pk> </home/artdub/.texmf-var/fonts/pk/ljfour/lh/lh-t2a/labx1095.60
+0pk> </home/artdub/.texmf-var/fonts/pk/ljfour/lh/lh-t2a/larm0800.600pk> </home/
+artdub/.texmf-var/fonts/pk/ljfour/lh/lh-t2a/larm1000.600pk></usr/share/texlive/
+texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/share/texlive/texmf-
+dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/share/texlive/texmf-dist/f
+onts/type1/public/amsfonts/cm/cmmi12.pfb></usr/share/texlive/texmf-dist/fonts/t
+ype1/public/amsfonts/cm/cmmi6.pfb></usr/share/texlive/texmf-dist/fonts/type1/pu
+blic/amsfonts/cm/cmmi8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/am
+sfonts/cm/cmr10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/
+cm/cmr12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6
+.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></u
+sr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/sha
+re/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy6.pfb></usr/share/texl
+ive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb>
+Output written on l22.pdf (2 pages, 138966 bytes).
+Transcript written on l22.log.
+artdub@mint ~/c++/labs/sem_2/lab_22 $ 
+artdub@mint ~/c++/labs/sem_2/lab_22 $ cat l22.
+l22.aux  l22.log  l22.pdf  l22.tex  
+artdub@mint ~/c++/labs/sem_2/lab_22 $ cat l22.tex 
+\documentclass[a4paper,11pt]{book}
+\usepackage[utf8]{inputenc} %кодировка текстового файла
+\usepackage[english,russian]{babel} %локализация
+\usepackage{indentfirst} %отступы и красные строки
+\usepackage{geometry}
+\usepackage{fancyhdr}
+\usepackage{textcomp,latexsym,amsmath,amsfonts}%математические символы
+\usepackage{graphics}%графика
+\geometry{left=4.5cm}
+\geometry{right=4.5cm}
+\geometry{top=3.5cm}
+\geometry{bottom=3cm}
+\pagestyle{fancy}
+\begin{document}
+\fancyhead[L]{\small{\textup 146}}
+\fancyhead[C]{\scriptsize{\textup{ДИФЕРЕНИЦАЛЬНЫЕ УРАВНЕНИЯ ВЫСШИХ ПОРЯДКОВ}}}
+\fancyhead[R]{\small{\textup{[гл. \scriptsize{IV} }}}
+\fancyfoot{} 
+\renewcommand{\headrulewidth}{0pt}
+
+\begin{text}
+	
+	\setlength{\parindent}{2em}
+	\setlength{\parskip}{-0.4cm}
+
+	\textbf{3.} {Уравнение вида:} 
+	
+	\textsl{$$F(y^{(n)},y^{(n-2)})=0.\eqno(21)$$} 
+	 
+	\noindent также и\hspace{0.5mm}н\hspace{0.5mm}т\hspace{0.5mm}е\hspace{0.5mm}г\hspace{0.5mm}р\hspace{0.5mm}и\hspace{0.5mm}р\hspace{0.5mm}у\hspace{0.5mm}ю\hspace{0.5mm}т\hspace{0.5mm}с\hspace{0.5mm}я\ в\ к\hspace{0.5mm}в\hspace{0.5mm}а\hspace{0.5mm}д\hspace{0.5mm}р\hspace{0.5mm}а\hspace{0.5mm}т\hspace{0.5mm}у\hspace{0.5mm}р\hspace{0.5mm}а\hspace{0.5mm}х. Введение нового пере-менного z = $y^{(n-2)}$ приводит уравнение (21) к уравнению второго порядка:
+
+	\textsl{$$F(z^{(n)},z)=0.\eqno(22)$$} 
+
+	\noindent Если уравнение (22) разрешено относительно $z^n$, т.е. имеет вид:
+
+	\textsl{$$z^{n}=f(z),\eqno(21')$$} 
+
+	\noindent то один из методов его интеграции таков: умножим обе части на $2z`$, получаем:
+
+	\textsl{$$2z'z^n=2f(z)dz,$$} 
+
+	\noindent или в диференциалах:
+
+	\textsl{$$d(z'{}^{2})=2f(z)dz,$$} 	
+
+	\noindent откуда
+
+	
+	  \textsl{$$z'{}^{2}=2 \mbox{\small$\int$} f(z)dz+C_1.$$} 
+	
+		
+	\noindent Последнее уравнение можно разрешить относительно производной и разделить переменные:
+
+	
+	\large{\textsl{$$\frac{dz}{\sqrt{2\int{f(z)dz+C_1}}}=dx;$$} }\setlength{\parskip}{-0.1cm}
+	
+	
+	\normalsize\noindent отсюда находим общий интеграл уравнения (22'):
+	
+	
+	\textsl\mbox{\large{$$\int{\frac{dz}{\sqrt{2\int{f(z)dz+C_1}}}=x+C_2.}$$} }
+
+
+	\normalsize\noindent Этот интеграл, по замене z на $y^{(y-2)}$, получает вид:\setlength{\parskip}{-0.2cm}
+
+	\textsl{$$\Phi(y^{(n-2)},x,C_1,C_2)=0,$$}
+
+	\noindent т. е. уравнение вида $(17');$ оно интегрируется, как мы уже знаем, квадратурами, причем эта интеграция ведет еще $n-2$ произвольных постоянных, и мы получим общее решение уравнения $(22').$\\
+	\setlength{\parindent}{1.8em}
+	\indent Если уравнение (21) дано в неразрешенном относительно $y^{(n)}$ виде и известно его параметрическое представление
+	\setlength{\parindent}{2em}
+
+	\textsl{$$y^{(n)}=\phi(t),\quad y^{(n-2)}=\psi(t), \eqno(21')$$}
+
+	\noindent то интеграция совершается следующим образом. Мы имеем два равенства:
+
+	\textsl{$$dy^{(n-1)}=y^{(n)}dx,\quad dy^{(n-2)}=y^{(n-1)}dx, $$}
+
+	\noindent связывающих две неизвестные функции от t, именно x и y; исключая деление dx, получаем диференциальное уравнение для $y^{(n-1)}:$
+
+	\textsl{$$y^{(n-1)}dy^{(n-1)}dx=y^{(n)}dy^{(n-2)}, $$}
+
+\end{text}
+
+
+\newpage
+\fancyhead[L]{\scriptsize{\textup \textsc{\textsection2]}}}
+\fancyhead[C]{\scriptsize{\textup{ТИПЫ УРАВНЕНИЙ} \large{n}\scriptsize-ГО ПОРЯДКА, РАЗРЕШАЕМЫЕ В КВАДРАТУРАХ }}
+\fancyhead[R]{\scriptsize{\textup{147}}}
+\fancyfoot{} 
+
+
+
+
+
+\begin{text}
+	
+
+	\setlength{\parindent}{0cm}
+	\setlength{\parskip}{-0.2cm}
+
+
+
+	\noindent или в силу уравнений $(21')$
+
+	\setlength{\parindent}{2em}
+
+	\textsl{$$y^{(n-1)}dy^{(n-1)}=\varphi(t)\psi'(t)dt, $$}
+
+	\noindent откуда квадратурой находим $(y^{(n-1)})^2;$ далее получим:
+
+	\textsl{$$y^{(n-1)}=\sqrt{2\mbox{\small$\int{\varphi(t)}$}\psi'(t)dt+C.} $$}
+
+	\noindent Имея параметрическое представление $y^{(n-1)}$ и $y^{(n-2)}$, мы свели задачу к типу $(20'')$, рассмотренному в разделе 2 настоящего параграфа. Дальнейшие квадратуры введут n---1 новых произвольных постоянных.\\
+
+	\textit{Пример 5.} \large{$a^{2}\frac{d^{4}y}{dx^{4}}=\frac{d^{2}y}{dx^{2}}.$} \normalsize Полагая $y^n=z$, приходим к уравнению: $a^2z^n=z$, умножим обе части на $2z'$:
+
+	\textsl{$$2a^2z'z^n=2zz'\quad \text{\textup{или}} \quad 2^2z'dz'=2z\ dz.$$}
+
+	\noindent Интегрируя, находим:
+
+	\textsl{$$a^2z^{'2}=z^2+C_1,$$}
+
+	\noindent откуда
+
+	\textsl{$$\frac{dz}{\sqrt{z^2+C_1}}=\frac{dx}{a}.$$}
+
+	\noindent Вторая интеграция дает:
+
+	\textsl{$$ln (z+\sqrt{z^2+C_1}) = \frac{x}{a}+lnC_2$$}
+
+	\noindent или
+
+	\textsl{$$z+\sqrt{z^2+C_1}=C_2e^{\frac{x}{a}},$$}
+
+	\noindent Чтобы разрешить последнее уравнение относительно z, выгодно поступить следующем образом: делим 1 на обе части последнего равенства:
+
+	\textsl{$$\frac{1}{z+\sqrt{z^2+C_1}}=\frac{1}{C_2}e^{-\frac{x}{a}},$$}
+
+	\noindent в левой части освобождаемся от иррациональности в знаменателе, затем умножаем обе части на ---$C_1$:
+
+	\textsl{$$z-\sqrt{z^2+C_1}=\frac{C_1}{C_2}e^{-\frac{x}{a}}.$$}
+
+	\noindent Складывая это уравнение с исходным и деля на 2, получаем:
+
+	\textsl{$$z=\frac{C_2}{2}e^{\frac{x}{a}}-\frac{C_1}{2C_2}e^{-\frac{x}{a}}.$$}	
+
+	\noindent Подставляя вместо z его значение $y^n$ и интегрируя два раза, находим:
+
+	\textsl{$$y=Ae^{\frac{x}{a}}+be^{-\frac{x}{a}}+Cx+D.$$}	
+
+	\noindent где A, B, C, D --- произвольные постоянные.
+
+\end{text}
+
+\end{document}artdub@mint ~/c++/labs/sem_2/lab_22 $ 

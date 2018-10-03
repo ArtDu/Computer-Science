@@ -1,0 +1,80 @@
+artdub@mint ~/c++/test $ date
+Пт. нояб. 17 21:19:11 MSK 2017
+artdub@mint ~/c++/test $ cat m.c
+#include <stdio.h>
+#include <stdlib.h>
+#include <math.h>
+#include <locale.h>
+
+const int i_0 = -11, j_0=-6, l_0=-5, k_0=0;
+
+
+int mod(int a, int b)
+{
+	double x,y;
+	x = (double) a;
+	y = (double) b;
+	return a-floor(x/y)*b;
+}
+
+int min(int a,int b)
+{
+    if(a>b)return b;
+    return a;
+}
+int max(int a,int b)
+{
+    if (a>b)return a;
+    return b;
+}
+
+int sign(int a)
+{
+    if (a>0) return 1;
+    if(a==0) return 0;
+    return -1;
+}
+
+
+int main() 
+{ 
+	setlocale(LC_ALL,"RUS");
+	int i = i_0, j = j_0, l = l_0, k = k_0;
+	int i_temp, j_temp, l_temp;
+	for (k = 0; k < 50; ++k)
+	{
+		if(i<=20 && i>=0 && j<=0 && j>=-20)
+		{
+			printf("Точка попала в заданную область \n");
+            printf("Время  k=%d\n",k);
+            printf("Конечные координаты \n");
+            printf("i=%d  ",i);
+            printf("j=%d\n",j);
+            printf("Динмическое значение  l=%d\n",l);
+            return 0;
+		}
+		i_temp = mod( (i+j+l)*(k+1) , 25) - mod( l*j*i*(k+2) , 10 ) + 10;
+		j_temp = min( mod( (i+j+l)*(k+3), 25 ), mod( i*j*l*(k+4), 25) ) + 10;
+		l_temp = 2 * sign(l) * abs( mod( (i+j+l)*(k+5) ,10) - mod( i*j*l*(k+6) , 25) );
+
+		i = i_temp;
+		j = j_temp;
+		l = l_temp;
+
+	}
+
+	printf("Точка не попала в заданную область \n");
+    printf("Время  k=%d\n",k);
+    printf("Конечные координаты \n");
+    printf("i=%d  ",i);
+    printf("j=%d\n",j);
+    printf("Динмическое значение  l=%d\n",l);
+
+	return 0; 
+}
+artdub@mint ~/c++/test $ gcc m.c -o m -lm && ./m
+Точка не попала в заданную область 
+Время  k=50
+Конечные координаты 
+i=10  j=10
+Динмическое значение  l=0

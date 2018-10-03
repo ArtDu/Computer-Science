@@ -1,0 +1,156 @@
+\documentclass[a4paper,11pt]{book}
+\usepackage[utf8]{inputenc} %кодировка текстового файла
+\usepackage[english,russian]{babel} %локализация
+\usepackage{indentfirst} %отступы и красные строки
+\usepackage{geometry}
+\usepackage{fancyhdr}
+\usepackage{textcomp,latexsym,amsmath,amsfonts}%математические символы
+\usepackage{graphics}%графика
+\geometry{left=4.5cm}
+\geometry{right=4.5cm}
+\geometry{top=3.5cm}
+\geometry{bottom=3cm}
+\pagestyle{fancy}
+\begin{document}
+\fancyhead[L]{\small{\textup 146}}
+\fancyhead[C]{\scriptsize{\textup{ДИФЕРЕНИЦАЛЬНЫЕ УРАВНЕНИЯ ВЫСШИХ ПОРЯДКОВ}}}
+\fancyhead[R]{\small{\textup{[гл. \scriptsize{IV} }}}
+\fancyfoot{} 
+\renewcommand{\headrulewidth}{0pt}
+
+\begin{text}
+	
+	\setlength{\parindent}{2em}
+	\setlength{\parskip}{-0.4cm}
+
+	\textbf{3.} {Уравнение вида:} 
+	
+	\textsl{$$F(y^{(n)},y^{(n-2)})=0.\eqno(21)$$} 
+	 
+	\noindent также и\hspace{0.5mm}н\hspace{0.5mm}т\hspace{0.5mm}е\hspace{0.5mm}г\hspace{0.5mm}р\hspace{0.5mm}и\hspace{0.5mm}р\hspace{0.5mm}у\hspace{0.5mm}ю\hspace{0.5mm}т\hspace{0.5mm}с\hspace{0.5mm}я\ в\ к\hspace{0.5mm}в\hspace{0.5mm}а\hspace{0.5mm}д\hspace{0.5mm}р\hspace{0.5mm}а\hspace{0.5mm}т\hspace{0.5mm}у\hspace{0.5mm}р\hspace{0.5mm}а\hspace{0.5mm}х. Введение нового пере-менного z = $y^{(n-2)}$ приводит уравнение (21) к уравнению второго порядка:
+
+	\textsl{$$F(z^{(n)},z)=0.\eqno(22)$$} 
+
+	\noindent Если уравнение (22) разрешено относительно $z^n$, т.е. имеет вид:
+
+	\textsl{$$z^{n}=f(z),\eqno(21')$$} 
+
+	\noindent то один из методов его интеграции таков: умножим обе части на $2z`$, получаем:
+
+	\textsl{$$2z'z^n=2f(z)dz,$$} 
+
+	\noindent или в диференциалах:
+
+	\textsl{$$d(z'{}^{2})=2f(z)dz,$$} 	
+
+	\noindent откуда
+
+	
+	  \textsl{$$z'{}^{2}=2 \mbox{\small$\int$} f(z)dz+C_1.$$} 
+	
+		
+	\noindent Последнее уравнение можно разрешить относительно производной и разделить переменные:
+
+	
+	\large{\textsl{$$\frac{dz}{\sqrt{2\int{f(z)dz+C_1}}}=dx;$$} }\setlength{\parskip}{-0.1cm}
+	
+	
+	\normalsize\noindent отсюда находим общий интеграл уравнения (22'):
+	
+	
+	\textsl\mbox{\large{$$\int{\frac{dz}{\sqrt{2\int{f(z)dz+C_1}}}=x+C_2.}$$} }
+
+
+	\normalsize\noindent Этот интеграл, по замене z на $y^{(y-2)}$, получает вид:\setlength{\parskip}{-0.2cm}
+
+	\textsl{$$\Phi(y^{(n-2)},x,C_1,C_2)=0,$$}
+
+	\noindent т. е. уравнение вида $(17');$ оно интегрируется, как мы уже знаем, квадратурами, причем эта интеграция ведет еще $n-2$ произвольных постоянных, и мы получим общее решение уравнения $(22').$\\
+	\setlength{\parindent}{1.8em}
+	\indent Если уравнение (21) дано в неразрешенном относительно $y^{(n)}$ виде и известно его параметрическое представление
+	\setlength{\parindent}{2em}
+
+	\textsl{$$y^{(n)}=\phi(t),\quad y^{(n-2)}=\psi(t), \eqno(21')$$}
+
+	\noindent то интеграция совершается следующим образом. Мы имеем два равенства:
+
+	\textsl{$$dy^{(n-1)}=y^{(n)}dx,\quad dy^{(n-2)}=y^{(n-1)}dx, $$}
+
+	\noindent связывающих две неизвестные функции от t, именно x и y; исключая деление dx, получаем диференциальное уравнение для $y^{(n-1)}:$
+
+	\textsl{$$y^{(n-1)}dy^{(n-1)}dx=y^{(n)}dy^{(n-2)}, $$}
+
+\end{text}
+
+
+\newpage
+\fancyhead[L]{\scriptsize{\textup \textsc{\textsection2]}}}
+\fancyhead[C]{\scriptsize{\textup{ТИПЫ УРАВНЕНИЙ} \large{n}\scriptsize-ГО ПОРЯДКА, РАЗРЕШАЕМЫЕ В КВАДРАТУРАХ }}
+\fancyhead[R]{\scriptsize{\textup{147}}}
+\fancyfoot{} 
+
+
+
+
+
+\begin{text}
+	
+
+	\setlength{\parindent}{0cm}
+	\setlength{\parskip}{-0.2cm}
+
+
+
+	\noindent или в силу уравнений $(21')$
+
+	\setlength{\parindent}{2em}
+
+	\textsl{$$y^{(n-1)}dy^{(n-1)}=\varphi(t)\psi'(t)dt, $$}
+
+	\noindent откуда квадратурой находим $(y^{(n-1)})^2;$ далее получим:
+
+	\textsl{$$y^{(n-1)}=\sqrt{2\mbox{\small$\int{\varphi(t)}$}\psi'(t)dt+C.} $$}
+
+	\noindent Имея параметрическое представление $y^{(n-1)}$ и $y^{(n-2)}$, мы свели задачу к типу $(20'')$, рассмотренному в разделе 2 настоящего параграфа. Дальнейшие квадратуры введут n---1 новых произвольных постоянных.\\
+
+	\textit{Пример 5.} \large{$a^{2}\frac{d^{4}y}{dx^{4}}=\frac{d^{2}y}{dx^{2}}.$} \normalsize Полагая $y^n=z$, приходим к уравнению: $a^2z^n=z$, умножим обе части на $2z'$:
+
+	\textsl{$$2a^2z'z^n=2zz'\quad \text{\textup{или}} \quad 2^2z'dz'=2z\ dz.$$}
+
+	\noindent Интегрируя, находим:
+
+	\textsl{$$a^2z^{'2}=z^2+C_1,$$}
+
+	\noindent откуда
+
+	\textsl{$$\frac{dz}{\sqrt{z^2+C_1}}=\frac{dx}{a}.$$}
+
+	\noindent Вторая интеграция дает:
+
+	\textsl{$$ln (z+\sqrt{z^2+C_1}) = \frac{x}{a}+lnC_2$$}
+
+	\noindent или
+
+	\textsl{$$z+\sqrt{z^2+C_1}=C_2e^{\frac{x}{a}},$$}
+
+	\noindent Чтобы разрешить последнее уравнение относительно z, выгодно поступить следующем образом: делим 1 на обе части последнего равенства:
+
+	\textsl{$$\frac{1}{z+\sqrt{z^2+C_1}}=\frac{1}{C_2}e^{-\frac{x}{a}},$$}
+
+	\noindent в левой части освобождаемся от иррациональности в знаменателе, затем умножаем обе части на ---$C_1$:
+
+	\textsl{$$z-\sqrt{z^2+C_1}=\frac{C_1}{C_2}e^{-\frac{x}{a}}.$$}
+
+	\noindent Складывая это уравнение с исходным и деля на 2, получаем:
+
+	\textsl{$$z=\frac{C_2}{2}e^{\frac{x}{a}}-\frac{C_1}{2C_2}e^{-\frac{x}{a}}.$$}	
+
+	\noindent Подставляя вместо z его значение $y^n$ и интегрируя два раза, находим:
+
+	\textsl{$$y=Ae^{\frac{x}{a}}+be^{-\frac{x}{a}}+Cx+D.$$}	
+
+	\noindent где A, B, C, D --- произвольные постоянные.
+
+\end{text}
+
+\end{document}

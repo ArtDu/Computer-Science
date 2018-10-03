@@ -1,0 +1,738 @@
+artdub@mint ~/c++/labs/sem_2/lab_20 $ date
+Вт. марта 13 03:31:01 MSK 2018
+artdub@mint ~/c++/labs/sem_2/lab_20 $ cmp f1 f2
+f1 f2 differ: byte 28, line 2
+artdub@mint ~/c++/labs/sem_2/lab_20 $ cmp -l f1 f2
+28 161 145
+41 141 161
+42 163 167
+43 144 145
+44  40 141
+45  61 163
+46  62  40
+47  63  61
+48  61  62
+49  62  63
+50  40  65
+51 161  62
+52 167  63
+53 145  61
+54  40  64
+55 161  40
+56  12 161
+57  12 145
+cmp: EOF on f1
+artdub@mint ~/c++/labs/sem_2/lab_20 $ cmp -s f1 f2
+artdub@mint ~/c++/labs/sem_2/lab_20 $ cmp -l f1 f2
+28 161 145
+41 141 161
+42 163 167
+43 144 145
+44  40 141
+45  61 163
+46  62  40
+47  63  61
+48  61  62
+49  62  63
+50  40  65
+51 161  62
+52 167  63
+53 145  61
+54  40  64
+55 161  40
+56  12 161
+57  12 145
+cmp: EOF on f1
+artdub@mint ~/c++/labs/sem_2/lab_20 $ cmp -s f1 f2
+artdub@mint ~/c++/labs/sem_2/lab_20 $ comm f1 f2
+                AAAAA BBBBB CCCCC
+        AAABBB AAeBB CCCCC
+AAABBB AAqBB CCCCC
+asdasd 12312 qwe q
+comm: file 1 is not in sorted order
+
+        asdqweas 12352314 qe q
+comm: file 2 is not in sorted order
+
+artdub@mint ~/c++/labs/sem_2/lab_20 $ comm -1 f1 f2
+        AAAAA BBBBB CCCCC
+AAABBB AAeBB CCCCC
+comm: file 1 is not in sorted order
+asdqweas 12352314 qe q
+comm: file 2 is not in sorted order
+
+artdub@mint ~/c++/labs/sem_2/lab_20 $ comm -2 f1 f2
+        AAAAA BBBBB CCCCC
+AAABBB AAqBB CCCCC
+asdasd 12312 qwe q
+comm: file 1 is not in sorted order
+
+comm: file 2 is not in sorted order
+artdub@mint ~/c++/labs/sem_2/lab_20 $ comm -3 f1 f2
+        AAABBB AAeBB CCCCC
+AAABBB AAqBB CCCCC
+asdasd 12312 qwe q
+comm: file 1 is not in sorted order
+
+        asdqweas 12352314 qe q
+comm: file 2 is not in sorted order
+artdub@mint ~/c++/labs/sem_2/lab_20 $ wc f1
+ 4 10 57 f1
+artdub@mint ~/c++/labs/sem_2/lab_20 $ wc -l f1
+4 f1
+artdub@mint ~/c++/labs/sem_2/lab_20 $ wc -w f1
+10 f1
+artdub@mint ~/c++/labs/sem_2/lab_20 $ wc -c f1
+57 f1
+artdub@mint ~/c++/labs/sem_2/lab_20 $ cat f3
+artdub@mint ~/c++/labs/sem_2/lab_20 $ dd if=f1 of=f3
+0+1 records in
+0+1 records out
+57 bytes copied, 0.005006 s, 11.4 kB/s
+artdub@mint ~/c++/labs/sem_2/lab_20 $ cat f3
+AAAAA BBBBB CCCCC
+AAABBB AAqBB CCCCC
+asdasd 12312 qwe q
+artdub@mint ~/c++/labs/sem_2/lab_20 $ cat > f3
+adas asd asd asd as
+^Z
+[6]+  Stopped                 cat > f3
+artdub@mint ~/c++/labs/sem_2/lab_20 $ dd if=f3  of=f4 conv=ebcdic
+0+1 records in
+0+1 records out
+21 bytes copied, 0.016669 s, 1.3 kB/s
+artdub@mint ~/c++/labs/sem_2/lab_20 $ cat f4
+@@@@@%artdub@mint ~/c++/labs/sem_2/lab_20 $ dd if=f4  of=f5 conv=ascii
+0+1 records in
+0+1 records out
+21 bytes copied, 0.005966 s, 3.5 kB/s
+artdub@mint ~/c++/labs/sem_2/lab_20 $ cat f5
+adas asd asd asd as
+artdub@mint ~/c++/labs/sem_2/lab_20 $ dd if=f3  of=f6 conv=ibm
+0+1 records in
+0+1 records out
+21 bytes copied, 0.005154 s, 4.1 kB/s
+artdub@mint ~/c++/labs/sem_2/lab_20 $ cat f6
+@@@@@%artdub@mint ~/c++/labs/sem_2/lab_20 $ ls
+f1  f2  f3  f4  f5  f6
+artdub@mint ~/c++/labs/sem_2/lab_20 $ diff f1 f2
+2,3c2,3
+< AAABBB AAqBB CCCCC
+< asdasd 12312 qwe q
+---
+> AAABBB AAeBB CCCCC
+> asdqweas 12352314 qe q
+artdub@mint ~/c++/labs/sem_2/lab_20 $ diff -b f1 f2
+2,3c2,3
+< AAABBB AAqBB CCCCC
+< asdasd 12312 qwe q
+---
+> AAABBB AAeBB CCCCC
+> asdqweas 12352314 qe q
+artdub@mint ~/c++/labs/sem_2/lab_20 $ diff -e f1 f2
+2,3c
+AAABBB AAeBB CCCCC
+asdqweas 12352314 qe q
+.
+artdub@mint ~/c++/labs/sem_2/lab_20 $ diff -f f1 f2
+c2 3
+AAABBB AAeBB CCCCC
+asdqweas 12352314 qe q
+.
+artdub@mint ~/c++/labs/sem_2/lab_20 $ diff -r f1 f2
+2,3c2,3
+< AAABBB AAqBB CCCCC
+< asdasd 12312 qwe q
+---
+> AAABBB AAeBB CCCCC
+> asdqweas 12352314 qe q
+artdub@mint ~/c++/labs/sem_2/lab_20 $ diff dir1 dir2
+Only in dir1: f1
+Only in dir2: f2
+artdub@mint ~/c++/labs/sem_2/lab_20 $ grep A f1
+AAAAA BBBBB CCCCC
+AAABBB AAqBB CCCCC
+artdub@mint ~/c++/labs/sem_2/lab_20 $ grep -v A f1
+asdasd 12312 qwe q
+
+artdub@mint ~/c++/labs/sem_2/lab_20 $ grep -c A f1
+2
+artdub@mint ~/c++/labs/sem_2/lab_20 $ grep -i A f1
+AAAAA BBBBB CCCCC
+AAABBB AAqBB CCCCC
+asdasd 12312 qwe q
+artdub@mint ~/c++/labs/sem_2/lab_20 $ grep -l A f1
+f1
+artdub@mint ~/c++/labs/sem_2/lab_20 $ grep -n A f1
+1:AAAAA BBBBB CCCCC
+2:AAABBB AAqBB CCCCC
+artdub@mint ~/c++/labs/sem_2/lab_20 $ grep -s A f1
+AAAAA BBBBB CCCCC
+AAABBB AAqBB CCCCC
+artdub@mint ~/c++/labs/sem_2/lab_20 $ join f3 f4
+
+AAAAA BBBBB CCCCC BBBBB CCCCC
+AAAAA BBBBB CCCCC BBBqBB CCCCC
+AAAAA BBBeBB CCCCC BBBBB CCCCC
+AAAAA BBBeBB CCCCC BBBqBB CCCCC
+artdub@mint ~/c++/labs/sem_2/lab_20 $ join -a 1  f3 f4
+
+AAAAA BBBBB CCCCC BBBBB CCCCC
+AAAAA BBBBB CCCCC BBBqBB CCCCC
+AAAAA BBBeBB CCCCC BBBBB CCCCC
+AAAAA BBBeBB CCCCC BBBqBB CCCCC
+asd qdasd qw 1 123 1
+artdub@mint ~/c++/labs/sem_2/lab_20 $ join -a 2  f3 f4
+
+AAAAA BBBBB CCCCC BBBBB CCCCC
+AAAAA BBBBB CCCCC BBBqBB CCCCC
+AAAAA BBBeBB CCCCC BBBBB CCCCC
+AAAAA BBBeBB CCCCC BBBqBB CCCCC
+qwdas asdqwr adf sd fs
+artdub@mint ~/c++/labs/sem_2/lab_20 $ join -e s  f3 f4
+s
+AAAAA BBBBB CCCCC BBBBB CCCCC
+AAAAA BBBBB CCCCC BBBqBB CCCCC
+AAAAA BBBeBB CCCCC BBBBB CCCCC
+AAAAA BBBeBB CCCCC BBBqBB CCCCC
+artdub@mint ~/c++/labs/sem_2/lab_20 $ cat f1.txt 
+petrov 1 ivan
+sidorov 2 jenya
+artdub@mint ~/c++/labs/sem_2/lab_20 $ cat f2.txt 
+fst 1 place 
+snd 2 place
+artdub@mint ~/c++/labs/sem_2/lab_20 $ join -j 2 f1.txt f2.txt 
+1 petrov ivan fst place 
+2 sidorov jenya snd place
+artdub@mint ~/c++/labs/sem_2/lab_20 $ cat f1.txt 
+1_petrov_ivan
+2_sidorov_jenya
+artdub@mint ~/c++/labs/sem_2/lab_20 $ cat f2.txt 
+1_fst_place 
+2_snd_plce
+artdub@mint ~/c++/labs/sem_2/lab_20 $ join -t _ f1.txt f2.txt 
+1_petrov_ivan_fst_place 
+2_sidorov_jenya_snd_plce
+
+artdub@mint ~/c++/labs/sem_2/lab_20 $ join -o 1.2 f3 f4
+
+BBBBB
+BBBBB
+BBBeBB
+BBBeBB
+artdub@mint ~/c++/labs/sem_2/lab_20 $ cat f1.txt 
+petrov 1 ivan
+sidorov 2 jenya
+artdub@mint ~/c++/labs/sem_2/lab_20 $ cat f2.txt 
+1 fst place 
+2 snd place
+artdub@mint ~/c++/labs/sem_2/lab_20 $ join -1 2 -2 1 f1.txt f2.txt 
+1 petrov ivan fst place 
+2 sidorov jenya snd place
+artdub@mint ~/c++/labs/sem_2/lab_20 $ sort f1
+
+AAAAA BBBBB CCCCC
+AAAAA BBBeBB CCCCC
+asd qdasd qw 1 123 1
+artdub@mint ~/c++/labs/sem_2/lab_20 $ sort -c f1
+sort: f1:4: disorder:
+artdub@mint ~/c++/labs/sem_2/lab_20 $ sort -c f3
+artdub@mint ~/c++/labs/sem_2/lab_20 $ sort -m f1 f2
+AAAAA BBBBB CCCCC
+AAAAA BBBBB CCCCC
+AAAAA BBBeBB CCCCC
+AAAAA BBBqBB CCCCC
+asd qdasd qw 1 123 1
+
+qwdas asdqwr adf sd fs
+
+artdub@mint ~/c++/labs/sem_2/lab_20 $ sort -u f1 f2
+
+
+AAAAA BBBBB CCCCC
+AAAAA BBBeBB CCCCC
+AAAAA BBBqBB CCCCC
+asd qdasd qw 1 123 1
+qwdas asdqwr adf sd fs
+artdub@mint ~/c++/labs/sem_2/lab_20 $ sort -o f1 f1
+artdub@mint ~/c++/labs/sem_2/lab_20 $ cat f1
+
+AAAAA BBBBB CCCCC
+AAAAA BBBeBB CCCCC
+asd qdasd qw 1 123 1
+artdub@mint ~/c++/labs/sem_2/lab_20 $ sort -d f2
+
+AAAAA BBBBB CCCCC
+AAAAA BBBqBB CCCCC
+qwdas asdqwr adf sd fs
+artdub@mint ~/c++/labs/sem_2/lab_20 $ sort -f f2
+
+AAAAA BBBBB CCCCC
+AAAAA BBBqBB CCCCC
+qwdas asdqwr adf sd fs
+artdub@mint ~/c++/labs/sem_2/lab_20 $ sort -i f2
+
+AAAAA BBBBB CCCCC
+AAAAA BBBqBB CCCCC
+qwdas asdqwr adf sd fs
+artdub@mint ~/c++/labs/sem_2/lab_20 $ sort -1 f2
+sort: invalid option -- '1'
+Try 'sort --help' for more information.
+artdub@mint ~/c++/labs/sem_2/lab_20 $ sort -n f2
+
+AAAAA BBBBB CCCCC
+AAAAA BBBqBB CCCCC
+qwdas asdqwr adf sd fs
+artdub@mint ~/c++/labs/sem_2/lab_20 $ sort +1 -3 f2
+
+qwdas asdqwr adf sd fs
+AAAAA BBBBB CCCCC
+AAAAA BBBqBB CCCCC
+artdub@mint ~/c++/labs/sem_2/lab_20 $ sort -d f2
+
+AAAAA BBBBB CCCCC
+AAAAA BBBqBB CCCCC
+qwdas asdqwr adf sd fs
+artdub@mint ~/c++/labs/sem_2/lab_20 $ sort -t A f2
+
+AAAAA BBBBB CCCCC
+AAAAA BBBqBB CCCCC
+qwdas asdqwr adf sd fs
+artdub@mint ~/c++/labs/sem_2/lab_20 $ tail
+as
+da asd
+sad asd
+ad asd
+asd as
+^Z
+[1]+  Stopped                 tail
+artdub@mint ~/c++/labs/sem_2/lab_20 $ tail f3
+
+AAAAA BBBBB CCCCC
+AAAAA BBBeBB CCCCC
+asd qdasd qw 1 123 1
+artdub@mint ~/c++/labs/sem_2/lab_20 $ tee ft
+asd a
+asd a
+asd ad
+asd ad
+asd asd asd
+asd asd asd
+^Z
+[3]+  Stopped                 tee ft
+artdub@mint ~/c++/labs/sem_2/lab_20 $ tee -i ft
+asd a
+asd a
+asd asds dasd
+asd asds dasd
+asd asd as
+asd asd as
+^Z
+[4]+  Stopped                 tee -i ft
+artdub@mint ~/c++/labs/sem_2/lab_20 $ tee -a ft
+asda
+asda
+123 123
+123 123
+1 312 af
+1 312 af
+as      asd as
+as      asd as
+^Z
+[5]+  Stopped                 tee -a ft
+artdub@mint ~/c++/labs/sem_2/lab_20 $ cat ft
+asd a
+asd asds dasd
+asd asd as
+asda
+123 123
+1 312 af
+as      asd as
+artdub@mint ~/c++/labs/sem_2/lab_20 $ tee ft
+asd a
+asd a
+asd ad
+asd ad
+asd asd asd
+asd asd asd
+^Z
+artdub@mint ~/c++/labs/sem_2/lab_20 $ tr AA b
+asdasd  AAAA a A a
+asdasd  bbbb a b a
+^Z
+[11]+  Stopped                 tr AA b
+hvids@DESKTOP-53S4GQ7:~$
+artdub@mint ~/c++/labs/sem_2/lab_20 $ tr -c AA b
+as da AA a BBB bbb
+^Z
+[12]+  Stopped                 tr -c AA b
+artdub@mint ~/c++/labs/sem_2/lab_20 $ tr -d AA b
+tr: extra operand ‘b’
+Only one string may be given when deleting without squeezing repeats.
+Try 'tr --help' for more information.
+artdub@mint ~/c++/labs/sem_2/lab_20 $ tr -b AA b
+tr: invalid option -- 'b'
+Try 'tr --help' for more information.
+artdub@mint ~/c++/labs/sem_2/lab_20 $ tr -s AA
+aaaaaaaaAAAAAAAAAAAAAAAAAAAAAAAA
+aaaaaaaaA
+^Z
+[13]+  Stopped                 tr -s AA
+artdub@mint ~/c++/labs/sem_2/lab_20 $ tr -d AA
+AAAAAAAAAAAAAAAssssssssaAa
+ssssssssaa
+^Z
+[14]+  Stopped                 tr -d AA
+artdub@mint ~/c++/labs/sem_2/lab_20 $ cat f1
+aaaaaaaa bbbbbbbb ccccc
+aaaaa bbbbb ccccc
+asa dwe qw ad asd
+artdub@mint ~/c++/labs/sem_2/lab_20 $ cat f2
+ asd ds sda qw asda zxc
+ad as dq
+ asd asd
+asd as
+artdub@mint ~/c++/labs/sem_2/lab_20 $ uniq f1 f2
+artdub@mint ~/c++/labs/sem_2/lab_20 $ cat f2
+aaaaaaaa bbbbbbbb ccccc
+aaaaa bbbbb ccccc
+asa dwe qw ad asd
+artdub@mint ~/c++/labs/sem_2/lab_20 $ cat > f2
+
+asd asd asd a
+sd
+qwe
+qe4 qwe 124 q
+^Z
+[19]+  Stopped                 cat > f2
+artdub@mint ~/c++/labs/sem_2/lab_20 $ uniq -u f1 f2
+artdub@mint ~/c++/labs/sem_2/lab_20 $ cat f2
+aaaaaaaa bbbbbbbb ccccc
+aaaaa bbbbb ccccc
+asa dwe qw ad asd
+artdub@mint ~/c++/labs/sem_2/lab_20 $ cat > f2
+^V ad asd qw easd
+adas dasd w \as
+d adad qeas
+^Z
+[20]+  Stopped                 cat > f2
+artdub@mint ~/c++/labs/sem_2/lab_20 $ uniq -d f1 f2
+artdub@mint ~/c++/labs/sem_2/lab_20 $ cat f2
+artdub@mint ~/c++/labs/sem_2/lab_20 $ cat > f2
+asd  sdasd asd asd asd
+^Z
+[21]+  Stopped                 cat > f2
+artdub@mint ~/c++/labs/sem_2/lab_20 $ cat f2
+asd  sdasd asd asd asd
+artdub@mint ~/c++/labs/sem_2/lab_20 $ uniq -c f1 f2
+artdub@mint ~/c++/labs/sem_2/lab_20 $ cat f2
+      1 aaaaaaaa bbbbbbbb ccccc
+      1 aaaaa bbbbb ccccc
+      1 asa dwe qw ad asd
+artdub@mint ~/c++/labs/sem_2/lab_20 $ od f1
+0000000 060541 060541 060541 060541 061040 061142 061142 061142
+0000020 020142 061543 061543 005143 060541 060541 020141 061142
+0000040 061142 020142 061543 061543 005143 071541 020141 073544
+0000060 020145 073561 060440 020144 071541 020144 000012
+0000075
+artdub@mint ~/c++/labs/sem_2/lab_20 $ od -b f1
+0000000 141 141 141 141 141 141 141 141 040 142 142 142 142 142 142 142
+0000020 142 040 143 143 143 143 143 012 141 141 141 141 141 040 142 142
+0000040 142 142 142 040 143 143 143 143 143 012 141 163 141 040 144 167
+0000060 145 040 161 167 040 141 144 040 141 163 144 040 012
+0000075
+artdub@mint ~/c++/labs/sem_2/lab_20 $ od -c f1
+0000000   a   a   a   a   a   a   a   a       b   b   b   b   b   b   b
+0000020   b       c   c   c   c   c  \n   a   a   a   a   a       b   b
+0000040   b   b   b       c   c   c   c   c  \n   a   s   a       d   w
+0000060   e       q   w       a   d       a   s   d      \n
+0000075
+artdub@mint ~/c++/labs/sem_2/lab_20 $ od -d f1
+0000000 24929 24929 24929 24929 25120 25186 25186 25186
+0000020  8290 25443 25443  2659 24929 24929  8289 25186
+0000040 25186  8290 25443 25443  2659 29537  8289 30564
+0000060  8293 30577 24864  8292 29537  8292    10
+0000075
+artdub@mint ~/c++/labs/sem_2/lab_20 $ od -o f1
+0000000 060541 060541 060541 060541 061040 061142 061142 061142
+0000020 020142 061543 061543 005143 060541 060541 020141 061142
+0000040 061142 020142 061543 061543 005143 071541 020141 073544
+0000060 020145 073561 060440 020144 071541 020144 000012
+0000075
+artdub@mint ~/c++/labs/sem_2/lab_20 $ od -s f1
+0000000  24929  24929  24929  24929  25120  25186  25186  25186
+0000020   8290  25443  25443   2659  24929  24929   8289  25186
+0000040  25186   8290  25443  25443   2659  29537   8289  30564
+0000060   8293  30577  24864   8292  29537   8292     10
+0000075
+artdub@mint ~/c++/labs/sem_2/lab_20 $ od -x f1
+0000000 6161 6161 6161 6161 6220 6262 6262 6262
+0000020 2062 6363 6363 0a63 6161 6161 2061 6262
+0000040 6262 2062 6363 6363 0a63 7361 2061 7764
+0000060 2065 7771 6120 2064 7361 2064 000a
+0000075
+artdub@mint ~/c++/labs/sem_2/lab_20 $ sum f1
+41350     1
+artdub@mint ~/c++/labs/sem_2/lab_20 $ cut -c 1-10 f1
+aaaaaaaa b
+aaaaa bbbb
+asa dwe qw
+artdub@mint ~/c++/labs/sem_2/lab_20 $ nroff f1
+aaaaaaaa bbbbbbbb ccccc aaaaa bbbbb ccccc asa dwe qw ad asd
+artdub@mint ~/c++/labs/sem_2/lab_20 $ ed f1
+61
+12
+?
+23
+?
+awe
+?
+^Z
+[5]+  Stopped                 ed f1
+artdub@mint ~/c++/labs/sem_2/lab_20 $ ed -s f1
+as sda sd as d
+?
+213
+?
+asd zx
+?
+close
+?
+^Z
+[6]+  Stopped                 ed -s f1
+artdub@mint ~/c++/labs/sem_2/lab_20 $ ed -p asdasd  f1
+61
+asdasd^Z
+[7]+  Stopped                 ed -p asdasd f1
+artdub@mint ~/c++/labs/sem_2/lab_20 $ cat f1
+sad as
+ zx cz
+ds
+a d
+as
+ d
+qw a
+sd aszxd as
+artdub@mint ~/c++/labs/sem_2/lab_20 $ sed 'sad' f1
+sed: -e expression #1, char 3: unterminated `s' command
+artdub@mint ~/c++/labs/sem_2/lab_20 $ sed 's/sad/point/g' f1
+point as
+ zx cz
+ds
+a d
+as
+ d
+qw a
+sd aszxd as
+artdub@mint ~/c++/labs/sem_2/lab_20 $ sed -n 2,3p f1
+ zx cz
+ds
+artdub@mint ~/c++/labs/sem_2/lab_20 $ sed  2,3p f1
+sad as
+ zx cz
+ zx cz
+ds
+ds
+a d
+as
+ d
+qw a
+sd aszxd as
+artdub@mint ~/c++/labs/sem_2/lab_20 $ head -n3 f1
+sad as
+ zx cz
+ds
+artdub@mint ~/c++/labs/sem_2/lab_20 $ head -n-3 f1
+sad as
+ zx cz
+ds
+a d
+as
+artdub@mint ~/c++/labs/sem_2/lab_20 $ head -c3 f1
+sadartdub@mint ~/c++/labs/sem_2/lab_20 $ head -c-3 f1
+sad as
+ zx cz
+ds
+a d
+as
+ d
+qw a
+sd aszxd
+artdub@mint ~/c++/labs/sem_2/lab_20 $ file f1
+f1: ASCII text
+artdub@mint ~/c++/labs/sem_2/lab_20 $ file -i f1
+f1: text/plain; charset=us-ascii
+artdub@mint ~/c++/labs/sem_2/lab_20 $ du f1
+0       f1
+artdub@mint ~/c++/labs/sem_2/lab_20 $ find f1
+f1
+artdub@mint ~/c++/labs/sem_2/lab_20 $ find f0
+find: ‘f0’: No such file or directory
+artdub@mint ~/c++/labs/sem_2/lab_20 $ df
+Filesystem     1K-blocks     Used Available Use% Mounted on
+rootfs         771960828 52201320 719759508   7% /
+none           771960828 52201320 719759508   7% /dev
+none           771960828 52201320 719759508   7% /run
+none           771960828 52201320 719759508   7% /run/lock
+none           771960828 52201320 719759508   7% /run/shm
+none           771960828 52201320 719759508   7% /run/user
+C:             771960828 52201320 719759508   7% /mnt/c
+artdub@mint ~/c++/labs/sem_2/lab_20 $ df -a
+Filesystem     1K-blocks     Used Available Use% Mounted on
+rootfs         771960828 52201320 719759508   7% /
+sysfs                  0        0         0    - /sys
+proc                   0        0         0    - /proc
+none           771960828 52201320 719759508   7% /dev
+devpts                 0        0         0    - /dev/pts
+none           771960828 52201320 719759508   7% /run
+none           771960828 52201320 719759508   7% /run/lock
+none           771960828 52201320 719759508   7% /run/shm
+none           771960828 52201320 719759508   7% /run/user
+binfmt_misc            0        0         0    - /proc/sys/fs/binfmt_misc
+C:             771960828 52201320 719759508   7% /mnt/c
+artdub@mint ~/c++/labs/sem_2/lab_20 $ df -h
+Filesystem      Size  Used Avail Use% Mounted on
+rootfs          737G   50G  687G   7% /
+none            737G   50G  687G   7% /dev
+none            737G   50G  687G   7% /run
+none            737G   50G  687G   7% /run/lock
+none            737G   50G  687G   7% /run/shm
+none            737G   50G  687G   7% /run/user
+C:              737G   50G  687G   7% /mnt/c
+artdub@mint ~/c++/labs/sem_2/lab_20 $ df -k
+Filesystem     1K-blocks     Used Available Use% Mounted on
+rootfs         771960828 52201512 719759316   7% /
+none           771960828 52201512 719759316   7% /dev
+none           771960828 52201512 719759316   7% /run
+none           771960828 52201512 719759316   7% /run/lock
+none           771960828 52201512 719759316   7% /run/shm
+none           771960828 52201512 719759316   7% /run/user
+C:             771960828 52201512 719759316   7% /mnt/c
+artdub@mint ~/c++/labs/sem_2/lab_20 $ ls
+f1
+artdub@mint ~/c++/labs/sem_2/lab_20 $ split f1
+artdub@mint ~/c++/labs/sem_2/lab_20 $ split -b 1m f1
+artdub@mint ~/c++/labs/sem_2/lab_20 $ ls
+f1  f2  xaa
+artdub@mint ~/c++/labs/sem_2/lab_20 $ cat xaa
+sad as
+ zx cz
+ds
+a d
+as
+ d
+qw a
+sd aszxd as
+artdub@mint ~/c++/labs/sem_2/lab_20 $ ls
+f1  xaa
+artdub@mint ~/c++/labs/sem_2/lab_20 $ split -n 3 f1
+artdub@mint ~/c++/labs/sem_2/lab_20 $ ls
+f1  xaa  xab  xac
+artdub@mint ~/c++/labs/sem_2/lab_20 $ cat xaa
+asd qw a
+artdub@mint ~/c++/labs/sem_2/lab_20 $ paste f1 f2
+sad as  as das
+ zx cz  zx
+ds      c as     asdddddddddddd asda sdas
+a d     sa das dasd as das
+as
+ d
+qw a
+sd aszxd as
+artdub@mint ~/c++/labs/sem_2/lab_20 $ paste -d f1 f2
+as das
+zx
+c as     asdddddddddddd asda sdas
+sa das dasd as das
+artdub@mint ~/c++/labs/sem_2/lab_20 $ paste -s f1 f2
+sad as   zx cz  ds      a d     as       d      qw a    sd aszxd as
+as das  zx      c as     asdddddddddddd asda sdas       sa das dasd as das
+artdub@mint ~/c++/labs/sem_2/lab_20 $ gzip -c f1.txt 
+ �Zf1.txt3�/H-)�/��,K��2�/�L�q�R�*�H���a
+artdub@mint ~/c++/labs/sem_2/lab_20 $ ls
+f1.txt  l20-2012.djvu  lb20.zip  otchet.pdf  pr lab20.txt
+artdub@mint ~/c++/labs/sem_2/lab_20 $ gzip -f f1.txt 
+artdub@mint ~/c++/labs/sem_2/lab_20 $ ls
+f1.txt.gz  l20-2012.djvu  lb20.zip  otchet.pdf  pr lab20.txt
+artdub@mint ~/c++/labs/sem_2/lab_20 $ gzip -d f1.txt 
+artdub@mint ~/c++/labs/sem_2/lab_20 $ ls
+f1.txt  l20-2012.djvu  lb20.zip  otchet.pdf  pr lab20.txt
+artdub@mint ~/c++/labs/sem_2/lab_20 $ gzip -h f1.txt f1
+Usage: gzip [OPTION]... [FILE]...
+Compress or uncompress FILEs (by default, compress FILES in-place).
+
+Mandatory arguments to long options are mandatory for short options too.
+
+  -c, --stdout      write on standard output, keep original files unchanged
+  -d, --decompress  decompress
+  -f, --force       force overwrite of output file and compress links
+  -h, --help        give this help
+  -k, --keep        keep (don't delete) input files
+  -l, --list        list compressed file contents
+  -L, --license     display software license
+  -n, --no-name     do not save or restore the original name and time stamp
+  -N, --name        save or restore the original name and time stamp
+  -q, --quiet       suppress all warnings
+  -r, --recursive   operate recursively on directories
+  -S, --suffix=SUF  use suffix SUF on compressed files
+  -t, --test        test compressed file integrity
+  -v, --verbose     verbose mode
+  -V, --version     display version number
+  -1, --fast        compress faster
+  -9, --best        compress better
+  --rsyncable       Make rsync-friendly archive
+
+With no FILE, or when FILE is -, read standard input.
+
+Report bugs to <bug-gzip@gnu.org>.
+artdub@mint ~/c++/labs/sem_2/lab_20 $ gzip -L
+gzip 1.6
+Copyright (C) 2007, 2010, 2011 Free Software Foundation, Inc.
+Copyright (C) 1993 Jean-loup Gailly.
+This is free software.  You may redistribute copies of it under the terms of
+the GNU General Public License <http://www.gnu.org/licenses/gpl.html>.
+There is NO WARRANTY, to the extent permitted by law.
+artdub@mint ~/c++/labs/sem_2/lab_20 $ gzip -l  f1.txt.gz 
+         compressed        uncompressed  ratio uncompressed_name
+                 54                  30   3.3% f1.txt
+artdub@mint ~/c++/labs/sem_2/lab_20 $ gzip -f -S asd_ f1.txt f2.txt 
+artdub@mint ~/c++/labs/sem_2/lab_20 $ ls
+f1.txtasd_  f2.txtasd_  l20-2012.djvu  lb20.zip  otchet.pdf  pr lab20.txt
+artdub@mint ~/c++/labs/sem_2/lab_20 $ gzip -t f1.gz 
+artdub@mint ~/c++/labs/sem_2/lab_20 $ ls
+f1.gz  l20-2012.djvu  lb20.zip  otchet.pdf  pr lab20.txt
+artdub@mint ~/c++/labs/sem_2/lab_20 $ gzip -v f1.gz 
+gzip: f1.gz already has .gz suffix -- unchanged
+artdub@mint ~/c++/labs/sem_2/lab_20 $ gzip -V f1.gz 
+gzip 1.6
+Copyright (C) 2007, 2010, 2011 Free Software Foundation, Inc.
+Copyright (C) 1993 Jean-loup Gailly.
+This is free software.  You may redistribute copies of it under the terms of
+the GNU General Public License <http://www.gnu.org/licenses/gpl.html>.
+There is NO WARRANTY, to the extent permitted by law.
+
+Written by Jean-loup Gailly.
+artdub@mint ~/c++/labs/sem_2/lab_20/asd $ ls
+f1  f1.txt  f2  f2.txt
+artdub@mint ~/c++/labs/sem_2/lab_20/asd $ f1 f2 | xargs rm 
+f1: команда не найдена
+rm: пропущен операнд
+По команде «rm --help» можно получить дополнительную информацию.
+artdub@mint ~/c++/labs/sem_2/lab_20/asd $ echo f1 f2 | xargs rm 
+artdub@mint ~/c++/labs/sem_2/lab_20/asd $ ls
+f1.txt  f2.txt
+artdub@mint ~/c++/labs/sem_2/lab_20/asd $ ls
+f1  f1.txt  f2  f2.txt  f3  f4
+artdub@mint ~/c++/labs/sem_2/lab_20/asd $ echo f1 f2 | xargs -n 2 rm 
+artdub@mint ~/c++/labs/sem_2/lab_20/asd $ ls
+f1.txt  f2.txt  f3  f4
+artdub@mint ~/c++/labs/sem_2/lab_20/asd $ ls
+f1  f1.txt  f2  f2.txt  f3  f4
+artdub@mint ~/c++/labs/sem_2/lab_20/asd $ echo f1 f2 f3 f4 | xargs -t rm 
+rm f1 f2 f3 f4 
+artdub@mint ~/c++/labs/sem_2/lab_20/asd $ ls
+f1  f1.txt  f2  f2.txt  xargs
+artdub@mint ~/c++/labs/sem_2/lab_20/asd $ ls f1/f12.xtx 
+f1/f12.xtx
+artdub@mint ~/c++/labs/sem_2/lab_20/asd $ ls f1 | xargs -I {} -t mv f1/{} f2/{}
+mv f1/f12.xtx f2/f12.xtx 
