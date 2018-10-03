@@ -1,5 +1,5 @@
-## Алгоритм Маркова
+## Составление и отладка простейшй программы на Си итеративного характера
 -----
-#### Задание: Возведение числа в натуральной степени в квадрат.
+#### Задание: ![screenshot of sample](https://github.com/ArtDu/mai_study_first_course/tree/master/labs/lab_9/task.png)
 
-    \markov_code.txt - код для Алгоритма Маркова.
+    \protocol.txt
