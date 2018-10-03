@@ -6,3 +6,4 @@
     \turing_interpreter - интерпретатор МТ.
     \turing_code.txt - код для машины тьюринга.
     \logicShift.gif - скрин диаграммы.
+    \report.pdf - отчет о работе.
