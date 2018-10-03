@@ -1,1 +1,0 @@
-/usr/bin/cc -g   CMakeFiles/mcode.dir/lexer.c.o CMakeFiles/mcode.dir/main.c.o CMakeFiles/mcode.dir/transform.c.o CMakeFiles/mcode.dir/tree.c.o  -o mcode 

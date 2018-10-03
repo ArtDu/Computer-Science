@@ -1,3 +1,0 @@
-/home/artdub/c++/labs/sem_2/lab_24/mcode/cmake-build-debug/CMakeFiles/rebuild_cache.dir
-/home/artdub/c++/labs/sem_2/lab_24/mcode/cmake-build-debug/CMakeFiles/edit_cache.dir
-/home/artdub/c++/labs/sem_2/lab_24/mcode/cmake-build-debug/CMakeFiles/mcode.dir

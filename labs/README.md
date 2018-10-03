@@ -14,3 +14,4 @@
 12. [/lab_21](https://github.com/ArtDu/mai_study_first_course/tree/master/labs/lab_21) - BASH script
 13. [/lab_22](https://github.com/ArtDu/mai_study_first_course/tree/master/labs/lab_22) - TeX
 14. [/lab_23](https://github.com/ArtDu/mai_study_first_course/tree/master/labs/lab_23) - C work with tree
+14. [/lab_24](https://github.com/ArtDu/mai_study_first_course/tree/master/labs/lab_24) - C work with expression tree
