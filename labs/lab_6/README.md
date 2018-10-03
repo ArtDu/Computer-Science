@@ -4,4 +4,5 @@
 
     \jdt5.jar - диаграммер.
     \diagram.jpg - скрин диаграммы.
+    \diagram.psd - psd диаграммы.
     \diagram.jdtp - код для диаграммера.
