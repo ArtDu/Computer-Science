@@ -12,3 +12,4 @@
 10. [/lab_14](https://github.com/ArtDu/mai_study_first_course/tree/master/labs/lab_14) - C work with loops
 11. [/lab_15](https://github.com/ArtDu/mai_study_first_course/tree/master/labs/lab_15) - C work with matrix
 12. [/lab_21](https://github.com/ArtDu/mai_study_first_course/tree/master/labs/lab_21) - BASH script
+13. [/lab_22](https://github.com/ArtDu/mai_study_first_course/tree/master/labs/lab_22) - TeX
