@@ -10,3 +10,4 @@
 8. [/lab_12](https://github.com/ArtDu/mai_study_first_course/tree/master/labs/lab_12) - C work with int
 9. [/lab_13](https://github.com/ArtDu/mai_study_first_course/tree/master/labs/lab_13) - C work with set
 10. [/lab_14](https://github.com/ArtDu/mai_study_first_course/tree/master/labs/lab_14) - C work with loops
+11. [/lab_15](https://github.com/ArtDu/mai_study_first_course/tree/master/labs/lab_15) - C work with matrix
